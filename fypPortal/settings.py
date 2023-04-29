@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'fypPortal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbhrtlun01mbk8',
+        'USER': 'jumitnqkzezyqv',
+        'PASSWORD': 'f70eff7f4fb4b48045c7c03ea2621eb71091ce96f34c7ff8e4ad98500ab3f2e8',
+        'HOST': 'ec2-3-208-74-199.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
