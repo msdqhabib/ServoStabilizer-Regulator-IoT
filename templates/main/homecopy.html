@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<div style="width: 500px; height: 500px;">
+  <canvas id="myChart" ></canvas>
+</div>
+{% endblock %}
+    
+
+{% block scripts %}
+
+<script>
+ const ctx = document.getElementById('myChart');
+
+ new Chart(ctx, {
+  type: 'bar',
+  data: {
+    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Unregulated Voltage', 'Regulated Voltage'],
+    datasets: [{
+      label: 'Voltage Regulation',
+      // data: [12, 19, 3, 5, 2, 3],
+      data: [150, 220],
+      fill:false,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true,
+      }
+    }
+  }
+});  
+
+</script>
+
+{% endblock %}

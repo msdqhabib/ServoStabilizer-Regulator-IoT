@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+<body>
+{% block content %}
+  
+  <div class="container-authentication">
+    <div class="signup-form">
+      <div class="row">
+          <form class="col s12"  method="POST">
+             {% csrf_token %}
+             <div class="row">
+            <!--  <div class="input-field col s6">
+                 {{form.first_name}} 
+                <label for="first_name">First Name</label>
+              </div> -->
+              <div class="input-field col s12">
+                 {{form.username}} 
+                <label for="username">Username</label>
+              </div>
+            </div>            
+            <div class="row">
+              <div class="input-field col s12">
+                {{form.password}}
+                <label for="password">Password</label>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="input-field col s6">
+                <button class="btn btn-register waves-effect waves-light" type="submit" name="action">Login Now
+                </button>    
+              </div>
+            </div>
+            {% if messages %}
+              <ul class="messages">
+                {% for message in messages %}
+                  <li {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red; margin-top: -20px;">{{ message }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+          </form>
+            <p>Don't have an account?<a href="http://127.0.0.1:8000/register/">     Signup now!</a></p>
+        </div>
+    </div>
+      
+    </div>
+{% endblock %}
+</body>
+</html>
