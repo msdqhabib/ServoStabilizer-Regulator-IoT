@@ -39,7 +39,7 @@ def home(request):
         return render(request, 'main/home.html',data)
 
     else:
-        return HttpResponse("You are not authorized")
+        return redirect("login")
 
 
 def registerUser(request):
